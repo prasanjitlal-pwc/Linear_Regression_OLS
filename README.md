@@ -18,49 +18,55 @@ Implemented **Simple Linear Regression from scratch** using the **Ordinary Least
 
 `Data → Mean → Slope & Intercept → Predictions → Residuals → SSE & SST → R² → Visualization`
 
-This project implements Multiple Linear Regression from scratch using NumPy and the Ordinary Least Squares (OLS) Normal Equation.
+# Multiple Linear Regression from Scratch
 
-What I implemented
-Created two independent variables: X1 and X2
-Combined the features into a single input matrix
-Added a column of 1s to calculate the intercept
-Calculated regression coefficients using the Normal Equation
-Extracted the intercept and slopes for each feature
-Generated predicted values
-Calculated residuals
-Calculated the R² score to evaluate model performance
-Regression Equation
+This project implements **Multiple Linear Regression from scratch using NumPy** and the **Ordinary Least Squares (OLS) Normal Equation**.
+
+## What I implemented
+
+* Created two independent variables: `X1` and `X2`
+* Combined the features into a single input matrix
+* Added a column of `1s` to calculate the intercept
+* Calculated regression coefficients using the Normal Equation
+* Extracted the intercept and slopes for each feature
+* Generated predicted values
+* Calculated residuals
+* Calculated the R² score to evaluate model performance
+
+## Regression Equation
 
 The model follows:
 
-[
+$$
 \hat{y} = b_0 + b_1X_1 + b_2X_2
-]
+$$
 
 Where:
 
-b0 = intercept
-b1 = coefficient for X1
-b2 = coefficient for X2
-ŷ = predicted value
-OLS Normal Equation
+* `b0` = intercept
+* `b1` = coefficient for `X1`
+* `b2` = coefficient for `X2`
+* `ŷ` = predicted value
+
+## OLS Normal Equation
 
 The coefficients are calculated using:
 
-[
+$$
 \beta = (X^TX)^{-1}X^Ty
-]
+$$
 
-Model Evaluation
+## Model Evaluation
 
 Residuals are calculated as:
 
-[
+$$
 Residual = y - \hat{y}
-]
+$$
 
 R² is used to measure how much variation in the target variable is explained by the regression model.
 
-Tools Used
-Python
-NumPy
+## Tools Used
+
+* Python
+* NumPy
