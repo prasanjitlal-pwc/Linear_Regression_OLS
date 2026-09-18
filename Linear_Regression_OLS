@@ -1,0 +1,43 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+X = np.array([2, 4, 5, 7, 8, 10, 12, 14, 15, 17])
+
+y = np.array([18, 25, 31, 38, 43, 51, 58, 67, 69, 78])
+
+# calulating the mean
+X_mean = np.mean(X)
+y_mean = np.mean(y)
+
+#Calculating the slope
+slope = np.sum((X - X_mean)* (y - y_mean))/np.sum((X - X_mean)**2)
+
+intercept = y_mean - (slope * X_mean)
+
+# make prediction
+y_pred = intercept + slope * X
+
+#Calculate Residuals
+residuals = y - y_pred
+
+#Calculate the SSE & SST
+SSE = np.sum((y - y_pred)**2)
+SST = np.sum((y - y_mean)**2)
+
+R_squared = 1 - (SSE/SST)
+
+print(f"Slope: {slope}")
+print(f"intercept: {intercept}")
+print(f"Predicted Y: {y_pred}")
+print(f"Residuals: {residuals}")
+print(f"Sum of squared error: {SSE}")
+print(f"Total sum of squares: {SST}")
+print(f"R_squared: {R_squared}")
+
+# ploting
+plt.scatter(X, y, label = "Actual Data", color = "b")
+plt.plot(X, y_pred, label = "Regression line", color = "r")
+plt.xlabel("X")
+plt.ylabel("y")
+plt.legend()
+plt.show()
